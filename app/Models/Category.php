@@ -9,4 +9,10 @@ class Category extends Model
 {
     use HasFactory;
     protected $guarder = ['id', 'created_at', 'update_at'];
+
+    //Relación de uno a muchos (category-article)
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

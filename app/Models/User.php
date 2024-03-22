@@ -56,7 +56,7 @@ class User extends Authenticatable
         return $this->hasMany(Article::class);
     }
 
-    //Relación de uno a muchos (user-comments)
+    //Relación de uno a muchos (user-comment)
     public function comments()
     {
         return $this->hasMany(Comment::class);
