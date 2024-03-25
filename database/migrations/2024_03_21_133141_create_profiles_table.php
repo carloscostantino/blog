@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('photo', 255)->nullable();
             $table->timestamps();
+            $table->string('profession', 60)->nullable();
+            $table->string('about', 255)->nullable();
+            $table->string('twitter', 100)->nullable();
+            $table->string('linkedin', 100)->nullable();
+            $table->string('facebook', 100)->nullable();
 
             //primera forma de unificar a tabla user
             $table->unsignedBigInteger('user_id')->unique();

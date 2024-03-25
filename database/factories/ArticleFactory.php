@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -22,7 +24,11 @@ class ArticleFactory extends Factory
             'title' => $title,
             'slug' => Str::slug($title),
             'introduction' => $this->faker->realText(255),
-
+            'image' => $this->faker->imageUrl(150, 150),
+            'body' => $this->faker->text(2000),
+            'status' => $this->faker->boolean(),
+            'user_id' => User::all()->random()->id,
+            'category_id' => Category::all()->random()->id,
         ];
     }
 }
